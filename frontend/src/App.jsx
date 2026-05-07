@@ -24,8 +24,7 @@ function App() {
   };
 
   useEffect(() => {
-    // API endpoint corrected to /all
-    axios.get('http://localhost:5000/api/videos/all') 
+    axios.get('https://scoutverse-zkbd.onrender.com/api/videos/all')
       .then(response => {
         setVideos(response.data);
         setLoading(false);
