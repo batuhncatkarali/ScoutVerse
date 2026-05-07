@@ -9,7 +9,7 @@ function VideoDetail() {
     useEffect(() => {
     const token = localStorage.getItem('token');
 
-    axios.get(`https://scoutverse-zkbd.onrender.com/videos/specific/${id}`, {
+    axios.get(`https://scoutverse-zkbd.onrender.com/api/videos/specific/${id}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
