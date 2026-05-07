@@ -1,0 +1,1 @@
+I've set up the infrastructure to upload videos to my own server without relying on YouTube links, and I've blurred the cards and added a lock icon for users who aren't logged in.

@@ -1,0 +1,35 @@
+data/source/models/User.js.i
+data/source/package-lock.json.i
+data/source/models/Video.js.i
+data/source/routes/videos.js.i
+data/source/server.js.i
+data/source/routes/auth.js.i
+data/source/package.json.i
+data/source/middleware/auth.js.i
+data/source/models/Order.js.i
+data/frontend/README.md.i
+data/frontend/src/App.jsx.i
+data/frontend/index.html.i
+data/frontend/public/favicon.svg.i
+data/frontend/src/index.css.i
+data/frontend/tailwind.config.js.i
+data/frontend/public/icons.svg.i
+data/frontend/package-lock.json.i
+data/frontend/.gitignore.i
+data/frontend/eslint.config.js.i
+data/frontend/package.json.i
+data/frontend/src/App.css.i
+data/frontend/src/main.jsx.i
+data/frontend/postcss.config.js.i
+data/frontend/src/assets/vite.svg.i
+data/frontend/src/assets/react.svg.i
+data/frontend/src/assets/hero.png.i
+data/frontend/vite.config.js.i
+data/frontend/src/pages/Register.jsx.i
+data/frontend/src/pages/Login.jsx.i
+data/source/uploads/documents/1774460446128-Ekran Görüntüsü (116).png.i
+data/source/uploads/documents/1774460446128-Ekran Görüntüsü (116).png.d
+data/source/uploads/documents/1774460223143-Ekran Görüntüsü (116).png.i
+data/source/uploads/documents/1774460223143-Ekran Görüntüsü (116).png.d
+data/frontend/src/pages/VideoDetail.jsx.i
+data/frontend/src/pages/UploadVideo.jsx.i
