@@ -28,7 +28,7 @@ function VideoDetail() {
   if (!video) return <div className="text-white text-center mt-20 font-black">LOADING VIDEO...</div>;
 
   const serverBaseUrl = "https://scoutverse-zkbd.onrender.com"; 
-  const videoSource = `${serverBaseUrl}${video.videoUrl}`;
+  const videoSource = video.videoUrl;
 
   return (
     <div className="max-w-6xl mx-auto p-6 bg-[#0f172a] min-h-screen">
@@ -40,7 +40,7 @@ function VideoDetail() {
           className="w-full h-full object-contain aspect-video"
           controlsList="nodownload"
         >
-          <source src={videoSource} type="video/mp4" />
+          <source src={videoSource} />
           Your browser does not support the video tag.
         </video>
       </div>
