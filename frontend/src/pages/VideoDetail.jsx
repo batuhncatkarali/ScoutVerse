@@ -27,7 +27,7 @@ function VideoDetail() {
 
   if (!video) return <div className="text-white text-center mt-20 font-black">LOADING VIDEO...</div>;
 
-  const serverBaseUrl = "http://localhost:5000"; 
+  const serverBaseUrl = "https://scoutverse-zkbd.onrender.com"; 
   const videoSource = `${serverBaseUrl}${video.videoUrl}`;
 
   return (
