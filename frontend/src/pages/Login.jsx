@@ -20,11 +20,11 @@ const Login = () => {
     console.log("🚀 Attempting login...");
     
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const res = await axios.post('https://scoutverse-zkbd.onrender.com/api/auth/login', formData);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('role', res.data.user.role);
       alert('Login Successful! Welcome back.');
-      window.location.href = "/"; // Daha güvenli bir yönlendirme için
+      window.location.href = "/";
     } catch (err) {
       console.error("❌ Login Error:", err.response?.data);
       alert(err.response?.data?.message || 'Invalid Credentials.');

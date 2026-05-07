@@ -32,7 +32,7 @@ const UploadVideo = () => {
       data.append('description', formData.description);
       data.append('video', selectedFile);
 
-      await axios.post('http://localhost:5000/api/videos/upload', data, {
+      await axios.post('https://scoutverse-zkbd.onrender.com/api/videos/upload', data, {
         headers: { 
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
