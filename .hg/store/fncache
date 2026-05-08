@@ -33,3 +33,7 @@ data/source/uploads/documents/1774460223143-Ekran Görüntüsü (116).png.i
 data/source/uploads/documents/1774460223143-Ekran Görüntüsü (116).png.d
 data/frontend/src/pages/VideoDetail.jsx.i
 data/frontend/src/pages/UploadVideo.jsx.i
+data/frontend/vercel.json.i
+data/package.json.i
+data/package-lock.json.i
+data/frontend/src/api.js.i
