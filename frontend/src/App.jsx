@@ -38,7 +38,7 @@ function App() {
   return (
     <Router>
       {}
-      <div className="min-h-screen bg-[#030712] text-white flex flex-col">
+      <div className="min-h-screen bg-[#030712] text-white flex flex-col p-4 md:p-8">
         
         {}
         <div className="p-8 flex-grow">
@@ -108,7 +108,7 @@ function App() {
                   )}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {videos.length > 0 ? (
                     videos
                     .filter((video) => {
