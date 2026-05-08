@@ -1,31 +1,29 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const path = require('path');
+const { CloudinaryStorage } = require('multer-storage-cloudinary'); // Yeni
+const cloudinary = require('cloudinary').v2; // Yeni
 const Video = require('../models/Video');
 const auth = require('../middleware/auth'); 
 
-
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/'); 
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname);
-  }
+// Cloudinary Yapılandırması (Buraya Dashboard'daki bilgilerini yaz)
+cloudinary.config({
+  cloud_name: 'dranu9qid',
+  api_key: '398584253298791',
+  api_secret: 'fLL1gyJ7-f7Xly_aObJ6_aaRPfQ'
 });
 
-const fileFilter = (req, file, cb) => {
-  if (file.mimetype.startsWith('video/')) {
-    cb(null, true);
-  } else {
-    cb(new Error('Invalid file type. Only video files are allowed!'), false);
-  }
-};
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'scoutverse_videos',
+    resource_type: 'video',
+    allowed_formats: ['mp4', 'mov', 'avi', 'mkv']
+  },
+});
 
 const upload = multer({ 
   storage: storage,
-  fileFilter: fileFilter,
   limits: { fileSize: 100 * 1024 * 1024 } 
 });
 
@@ -33,18 +31,23 @@ router.post('/upload', auth, upload.single('video'), async (req, res) => {
   try {
     const { title, player, category, description } = req.body;
 
+  
+    if (!req.file) {
+        return res.status(400).json({ message: "Video dosyası seçilmedi." });
+    }
+
     const newVideo = new Video({
       title: title,
       player: player,
       category: category,
       description: description,
-      videoUrl: `/uploads/${req.file.filename}`,
+      videoUrl: req.file.path,
       uploadDate: new Date()
     });
 
     const savedVideo = await newVideo.save();
     res.status(201).json({
-      message: "Video uploaded successfully to ScoutVerse!",
+      message: "Video uploaded successfully to Cloudinary and ScoutVerse!",
       video: savedVideo
     });
   } catch (err) {

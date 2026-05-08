@@ -28,8 +28,8 @@ function VideoDetail() {
   if (!video) return <div className="text-white text-center mt-20 font-black">LOADING VIDEO...</div>;
 
   const serverBaseUrl = "https://scoutverse-zkbd.onrender.com"; 
-  const videoSource = `${serverBaseUrl.replace(/\/$/, '')}/${video.videoUrl.replace(/^\//, '')}`;
-  console.log("TAM VİDEO LİNKİ:", videoSource);
+  const videoSource = video.videoUrl;
+  console.log("Video Link:", videoSource);
 
   return (
     <div className="max-w-6xl mx-auto p-6 bg-[#0f172a] min-h-screen">

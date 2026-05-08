@@ -5,6 +5,7 @@ const cors = require('cors');
 const path = require('path');
 const authRoutes = require('./routes/auth.js');
 const videoRoutes = require('./routes/videos.js');
+const cloudinary = require('cloudinary').v2;
 
 dotenv.config();
 
@@ -12,6 +13,12 @@ const app = express();
 
 app.use(cors()); 
 app.use(express.json()); 
+
+cloudinary.config({
+  cloud_name: 'dranu9qid',
+  api_key: '398584253298791',
+  api_secret: 'fLL1gyJ7-f7Xly_aObJ6_aaRPfQ' 
+});
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
